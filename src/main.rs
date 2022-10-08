@@ -1,6 +1,11 @@
 #[derive(Debug)]
-struct TreeNode {
-    data: &str,
-    left_child: Option<TreeNode>,
-    right_child: Option<TreeNode>,
+struct TreeNode<'a>{
+    data: &'a str,
+    left_child: Option<Box<TreeNode<'a>>>,
+    right_child: Option<Box<TreeNode<'a>>>
+}
+
+
+fn main(){
+    
 }
