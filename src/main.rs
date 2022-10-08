@@ -10,12 +10,15 @@ pub struct TreeNode<T> {
 impl TreeNode<i32>{
     
     pub fn insert_node(&mut self, data:i32)  {
+
         if self.data == data {
             return
         }
+
         let new_node = if data < self.data { 
             &mut self.left_child
         } 
+        
         else {
             &mut self.right_child 
         };
