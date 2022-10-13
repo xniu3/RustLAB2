@@ -6,7 +6,7 @@ fn main(){
     groups[3]=["Sue", "Wendy", "Sam", "Brad"];
     groups[4]=["Kate", "Jack", "James", "Sydney"];
     groups[5]=["Mary", "John", "Ricky", "Wendy"];
-    let test_member = "Wendy";
+    let test_member = "Michael";
     searchMember(groups,&test_member);
 }
 
