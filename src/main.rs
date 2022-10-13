@@ -6,21 +6,21 @@ pub struct TreeNode<'a>{
 }
 
 impl <'a> TreeNode <'a>{
-    pub fn insert_node(&mut self, data: &'a str) {
-        if self.data == data {
+    pub fn insert_node(&mut self, newdata: &'a str) {
+        if self.data == newdata {
             return
         }
         let new_node = 
-            if data < self.data { 
+            if newdata < self.data { 
                 &mut self.left_child 
             } 
             else {
                 &mut self.right_child 
             };
         match new_node{
-            &mut Some(ref mut node) => node.insert_node(data),
+            &mut Some(ref mut node) => node.insert_node(newdata),
             &mut None =>{
-                let temp_node = TreeNode{data:data, left_child:None , right_child:None};
+                let temp_node = TreeNode{data:newdata, left_child:None , right_child:None};
                 *new_node = Some(Box::new(temp_node));
             }
         }
@@ -28,11 +28,11 @@ impl <'a> TreeNode <'a>{
 }
 
 fn main(){
-    let mut root_val = "55";
+    let mut root_val = "4";
     let mut root = TreeNode{data:root_val, left_child: None, right_child:None};
-    root.insert_node("6");
-    root.insert_node("9");
-    root.insert_node("701");
-    root.insert_node("705");
+    root.insert_node("2");
+    root.insert_node("7");
+    root.insert_node("55");
+    root.insert_node("52");
     println!("{:#?}",root);
 }
