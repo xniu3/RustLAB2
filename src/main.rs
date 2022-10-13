@@ -28,11 +28,13 @@ impl <'a> TreeNode <'a>{
 }
 
 fn main(){
-    let mut root_val = "4";
+    let mut root_val = "5";
     let mut root = TreeNode{data:root_val, left_child: None, right_child:None};
+    root.insert_node("3");
     root.insert_node("2");
+    root.insert_node("4");
     root.insert_node("7");
-    root.insert_node("55");
-    root.insert_node("52");
+    root.insert_node("6");
+    root.insert_node("8");
     println!("{:#?}",root);
 }
